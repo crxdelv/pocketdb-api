@@ -39,7 +39,8 @@ module.exports = async (req, res) => {
   if(req.query.token == undefined) {
     // new database
     var db = await pocketdb();
-    await db.set(req.query.key, JSON.())
+    await db.set(req.query.key, JSON.parse(req.body));
+    return resolve(null);
   } else {
     // load database
     
