@@ -1,4 +1,5 @@
 const pocketdb = require('./pocketdb.js');
+const 
 module.exports = async (req, res) => {
   function resolve(data, reqdata) {
     res.status(200).send(JSON.stringify({
@@ -15,6 +16,6 @@ module.exports = async (req, res) => {
     }));
   }
   if(req.method != "POST") {
-    return reject(400, );
+    return reject(400, "INVALID_METHOD", "");
   }
 }
