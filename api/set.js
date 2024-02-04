@@ -26,13 +26,15 @@ module.exports = async (req, res) => {
     }));
   }
   if(req.query.key == undefined) {
-    return reject(ERR_, {
+    return reject(ERR_PARAM, {
       token: req.query.token
     });
   }
   if(req.method != "POST") {
     return reject(ERR_METHOD, {
-      token: req.query.token
+      token: req.query.token,
+      key: req.query.key
     });
   }
+  if()
 }
