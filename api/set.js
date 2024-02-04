@@ -2,9 +2,10 @@ const pocketdb = require('./pocketdb.js');
 
 const ERR_METHOD = [
   "INVALID_METHOD",
-  "POST method is the only method accepted for the endpoint /set.js",
+  "POST is the only method accepted for the endpoint /set.js",
   400
 ];
+const E
 
 module.exports = async (req, res) => {
   function resolve(data, reqdata) {
@@ -18,7 +19,7 @@ module.exports = async (req, res) => {
     res.status(status).send(JSON.stringify({
       success: false,
       error, message,
-      request: reqdata
+      request: reqdata || 
     }));
   }
   if(req.method != "POST") {
