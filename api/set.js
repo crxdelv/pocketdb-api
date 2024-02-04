@@ -5,7 +5,10 @@ const ERR_METHOD = [
   "POST is the only method accepted for the endpoint /set.js",
   400
 ];
-const E
+const ERR_PARAM = [
+  "INCOMPLETE_PARAM",
+  "Incomplete parameters. Please view the documentation "
+]
 
 module.exports = async (req, res) => {
   function resolve(data, reqdata) {
@@ -19,7 +22,7 @@ module.exports = async (req, res) => {
     res.status(status).send(JSON.stringify({
       success: false,
       error, message,
-      request: reqdata || 
+      request: reqdata || {}
     }));
   }
   if(req.method != "POST") {
