@@ -2,7 +2,7 @@ const pocketdb = require('./pocketdb.js');
 
 const ERR_METHOD = [
   "INVALID_METHOD",
-  "Invalid method. POST is the only",
+  "POST method is the only method accepted for the endpoint /set.js",
   400
 ];
 
