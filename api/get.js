@@ -37,8 +37,7 @@ module.exports = async (req, res) => {
     var db = await pocketdb();
     var data = await db.get(req.query.key);
     return resolve({
-      list: db.list,
-      data
+      list: db.list, data
     }, {
       token: req.query.token,
       key: req.query.key
