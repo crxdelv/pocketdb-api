@@ -2,12 +2,12 @@ const pocketdb = require('./pocketdb.js');
 
 const ERR_METHOD = [
   "INVALID_METHOD",
-  "POST is the only method accepted for the endpoint /set.js",
+  "POST is the only method accepted for the endpoint /set",
   400
 ];
 const ERR_PARAM = [
   "INCOMPLETE_PARAM",
-  "Incomplete parameters. Please view the documentation "
+  "Incomplete parameters. Please view the documentation https://pocketdb-api.vercel.app/docs/set fo"
 ]
 
 module.exports = async (req, res) => {
