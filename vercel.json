@@ -12,7 +12,16 @@
       "value": "*"
     }, {
       "key": "Access-Control-Allow-Methods",
-      "value": "GET,POST"
+      "value": "POST"
+    }]
+  }, {
+    "source": "/api/get.js",
+    "headers": [{
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    }, {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET"
     }]
   }]
 }
