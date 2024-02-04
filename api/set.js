@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     }));
   }
   function reject([ error, message ], reqdata) {
-    res.status(status).send(JSON.stringify({
+    res.status(400).send(JSON.stringify({
       success: false,
       error, message,
       request: reqdata
