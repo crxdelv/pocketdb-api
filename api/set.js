@@ -8,7 +8,7 @@ const ERR_PARAM = [
   "INCOMPLETE_PARAM",
   "Incomplete parameters. Please view the documentation https://pocketdb-api.vercel.app/docs/set for more information.",
 ];
-const ERR_
+const 
 
 module.exports = async (req, res) => {
   function resolve(data, reqdata) {
@@ -25,7 +25,9 @@ module.exports = async (req, res) => {
       request: reqdata
     }));
   }
-  if(req.method !=)
+  if(req.query.key == undefined || req.) {
+    
+  }
   if(req.method != "POST") {
     return reject(ERR_METHOD, {
       token: req.query.token
