@@ -53,6 +53,20 @@ module.exports = async (req, res) => {
     }
   } else {
     // load database
-    
+    try {
+      var db = await pocketdb(req.query.token);
+      await db.set(req.query.key, JSON.parse(req.body));
+      return resolve({
+        list: db.list,
+        ke: req.query.key
+      }, {
+        key: req.query.key
+      });
+    } catch(e) {
+      return reject(["INTERNAL_ERROR", e.toString()], {
+        token: req.query.token,
+        key: req.query.key
+      });
+    }
   }
 }
