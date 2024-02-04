@@ -2,11 +2,11 @@
   "version": 2,
   "cleanUrls": true,
   "builds": [{
-    "src": "api/*.js",
+    "src": "/api/*.js",
     "use": "@vercel/node"
   }],
   "headers": [{
-    "source": "a/index.js",
+    "source": "/api/*.js",
     "headers": [{
       "key": "Access-Control-Allow-Origin",
       "value": "*"
