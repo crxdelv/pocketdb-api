@@ -10,6 +10,8 @@ const ERR_PARAM = [
 ];
 
 module.exports = async (req, res) => {
+  response.setHeader("Access-Control-Allow-Origin", "*");
+  response.setHeader("Content-Type", "application/json");
   function resolve(data, reqdata) {
     res.status(200).send(JSON.stringify({
       success: true,
