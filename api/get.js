@@ -35,10 +35,10 @@ module.exports = async (req, res) => {
   }
   try {
     var db = await pocketdb();
-    await db.het(req.query.key, JSON.parse(req.body));
+    var data = await db.get(req.query.key);
     return resolve({
       list: db.list,
-      
+      data: js
     }, {
       token: req.query.token,
       key: req.query.key
