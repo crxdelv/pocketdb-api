@@ -36,5 +36,11 @@ module.exports = async (req, res) => {
       key: req.query.key
     });
   }
-  if()
+  if(req.query.token == undefined) {
+    // new database
+    pocketdb()
+  } else {
+    // load database
+    
+  }
 }
