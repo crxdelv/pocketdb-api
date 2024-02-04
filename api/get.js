@@ -24,4 +24,14 @@ module.exports = async (req, res) => {
       request: reqdata
     }));
   }
+  if(req.query.key == undefined || req.query.token == undefined) {
+    return reject(ERR_PARAM, {
+});
+  }
+  if(req.method != "POST") {
+    return reject(ERR_METHOD, {
+      token: req.query.token,
+      key: req.query.key
+    });
+  }
 }
