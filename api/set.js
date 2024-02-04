@@ -47,7 +47,9 @@ module.exports = async (req, res) => {
         key: req.query.key
       });
     } catch(e) {
-      return reject()
+      return reject(["INTERNAL_ERROR", e.toString()], {
+        key: req.query.key
+      });
     }
   } else {
     // load database
