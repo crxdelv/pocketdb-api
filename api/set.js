@@ -8,7 +8,6 @@ const ERR_PARAM = [
   "INCOMPLETE_PARAM",
   "Incomplete parameters. Please view the documentation https://pocketdb-api.vercel.app/docs/set for more information.",
 ];
-const 
 
 module.exports = async (req, res) => {
   function resolve(data, reqdata) {
@@ -38,14 +37,18 @@ module.exports = async (req, res) => {
   }
   if(req.query.token == undefined) {
     // new database
-    var db = await pocketdb();
-    await db.set(req.query.key, JSON.parse(req.body));
-    return resolve({
-      list: db.list,
-      token: db.token
-    }, {
-      key: req.query.key
-    });
+    try {
+      var db = await pocketdb();
+      await db.set(req.query.key, JSON.parse(req.body));
+      return resolve({
+        list: db.list,
+        token: db.token
+      }, {
+        key: req.query.key
+      });
+    } catch(e) {
+      return reject()
+    }
   } else {
     // load database
     
