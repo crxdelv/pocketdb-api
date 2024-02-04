@@ -1,4 +1,4 @@
-async function pocketdb(token) {
+module.exports = (token) => {
   if (token != null) {
     // use existing database
     try {
