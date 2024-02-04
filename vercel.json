@@ -6,7 +6,7 @@
     "use": "@vercel/node"
   }],
   "headers": [{
-    "source": "/api/*.js",
+    "source": "/api/set.js",
     "headers": [{
       "key": "Access-Control-Allow-Origin",
       "value": "*"
