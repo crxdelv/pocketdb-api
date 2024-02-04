@@ -1,7 +1,9 @@
 const pocketdb = require('./pocketdb.js');
 
 const ERR_METHOD = [
-  400, ""
+  "INVALID_METHOD",
+  "",
+  400
 ];
 
 module.exports = async (req, res) => {
@@ -12,7 +14,7 @@ module.exports = async (req, res) => {
       request: reqdata
     }));
   }
-  function reject([ status, error, message, reqdata ]) {
+  function reject([ error, message, status ], reqdata) {
     res.status(status).send(JSON.stringify({
       success: false,
       error, message,
