@@ -2,13 +2,13 @@ const pocketdb = require('./pocketdb.js');
 
 const ERR_METHOD = [
   "INVALID_METHOD",
-  "POST is the only method accepted for the endpoint /set",
-  400
+  "POST is the only method accepted for the endpoint /set"
 ];
 const ERR_PARAM = [
   "INCOMPLETE_PARAM",
-  "Incomplete parameters. Please view the documentation https://pocketdb-api.vercel.app/docs/set fo"
-]
+  "Incomplete parameters. Please view the documentation https://pocketdb-api.vercel.app/docs/set for more information.",
+];
+const 
 
 module.exports = async (req, res) => {
   function resolve(data, reqdata) {
@@ -18,14 +18,17 @@ module.exports = async (req, res) => {
       request: reqdata
     }));
   }
-  function reject([ error, message, status ], reqdata) {
+  function reject([ error, message ], reqdata) {
     res.status(status).send(JSON.stringify({
       success: false,
       error, message,
-      request: reqdata || {}
+      request: reqdata
     }));
   }
+  if(req.method !=)
   if(req.method != "POST") {
-    return reject(ERR_METHOD);
+    return reject(ERR_METHOD, {
+      token
+    });
   }
 }
