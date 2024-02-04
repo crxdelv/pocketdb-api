@@ -40,7 +40,12 @@ module.exports = async (req, res) => {
     // new database
     var db = await pocketdb();
     await db.set(req.query.key, JSON.parse(req.body));
-    return resolve(null);
+    return resolve({
+      dataset: db.
+    }, {
+      token: db.token,
+      
+    });
   } else {
     // load database
     
