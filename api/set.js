@@ -45,7 +45,7 @@ module.exports = async (req, res) => {
         token: db.token
       }, {
         key: req.query.key,
-        value: req.body
+        value: JSON.parse(req.body)
       });
     } catch(e) {
       return reject(["INTERNAL_ERROR", e.toString()], {
@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
       }, {
         key: req.query.key,
         token: req.query.token,
-        value: req.body
+        value: JSON.parse(req.body)
       });
     } catch(e) {
       return reject(["INTERNAL_ERROR", e.toString()], {
