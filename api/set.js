@@ -4,7 +4,7 @@ module.exports = async (req, res) => {
     res.status(200).send(JSON.stringify({
       success: true,
       result: data,
-        request: reqdata
+      request: reqdata
     }));
   }
   function reject(status, error, message, reqdata) {
@@ -14,5 +14,7 @@ module.exports = async (req, res) => {
       request: reqdata
     }));
   }
-  if(
+  if(req.method != "POST") {
+    return reject(400, );
+  }
 }
