@@ -1,4 +1,4 @@
-module.exports = (token) => {
+module.exports = async (token) => {
   if (token != null) {
     // use existing database
     try {
