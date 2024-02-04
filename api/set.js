@@ -25,8 +25,10 @@ module.exports = async (req, res) => {
       request: reqdata
     }));
   }
-  if(req.query.key == undefined || req.) {
-    
+  if(req.query.key == undefined) {
+    return reject(ERR_, {
+      token: req.query.token
+    });
   }
   if(req.method != "POST") {
     return reject(ERR_METHOD, {
