@@ -45,7 +45,7 @@ module.exports = async (req, res) => {
         token: db.token
       }, {
         key: req.query.key,
-        value: thro
+        value: req.body
       });
     } catch(e) {
       return reject(["INTERNAL_ERROR", e.toString()], {
