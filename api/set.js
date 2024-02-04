@@ -1,7 +1,7 @@
 const pocketdb = require('./pocketdb.js');
 module.exports = async (req, res) => {
   function resolve(data, reqdata) {
-    res.status(status).send(JSON.stringify({
+    res.status(200).send(JSON.stringify({
       success: true,
       result: data,
         request: reqdata
@@ -9,20 +9,10 @@ module.exports = async (req, res) => {
   }
   function reject(status, error, message, reqdata) {
     res.status(status).send(JSON.stringify({
-       success: true,
-        result: data,
-        request: reqdata
-      }));
-  }
-    if(status >= 400) {
-      res.status(status).send(JSON.stringify({
-        success: false,
-        error: data,
-        request: reqdata
-      }));
-    } else {
-      
-    }
+      success: false,
+      error, message,
+      request: reqdata
+    }));
   }
   if(
 }
