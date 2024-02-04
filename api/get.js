@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
     var data = await db.get(req.query.key);
     return resolve({
       list: db.list,
-      data: js
+      data
     }, {
       token: req.query.token,
       key: req.query.key
