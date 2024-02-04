@@ -30,5 +30,11 @@
   }, {
     "source": "/get",
     "destination": "/api/get.js"
-  },]
+  }, {
+    "source": "/docs/set",
+    "destination": "/docs/set.html"
+  }, {
+    "source": "/docs/get",
+    "destination": "/docs/get.html"
+  }]
 }
