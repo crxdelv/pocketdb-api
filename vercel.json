@@ -23,5 +23,12 @@
       "key": "Access-Control-Allow-Methods",
       "value": "GET"
     }]
-  }]
+  }],
+  "rewrites": [{
+    "source": "/set",
+    "destination": "/api/set.js"
+  }, {
+    "source": "/get",
+    "destination": "/api/get.js"
+  },]
 }
