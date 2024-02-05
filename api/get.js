@@ -29,13 +29,15 @@ module.exports = async (req, res) => {
   if(req.query.key == undefined || req.query.token == undefined) {
     return reject(ERR_PARAM, {
       token: req.query.token,
-      key: req.query.key
+      key: req.query.key,
+      endpoint: "/get"
     });
   }
   if(req.method != "GET") {
     return reject(ERR_METHOD, {
       token: req.query.token,
-      key: req.query.key
+      key: req.query.key,
+      endpoint: "/get"
     });
   }
   try {
@@ -45,12 +47,14 @@ module.exports = async (req, res) => {
       list: db.list, data
     }, {
       token: req.query.token,
-      key: req.query.key
+      key: req.query.key,
+      endpoint: "/get"
     });
   } catch(e) {
     return reject(["INTERNAL_ERROR", e.toString()], {
       token: req.query.token,
-      key: req.query.key
+      key: req.query.key,
+      endpoint: "/get"
     });
   }
 }
