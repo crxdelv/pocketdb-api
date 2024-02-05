@@ -47,11 +47,13 @@ module.exports = async (req, res) => {
         token: db.token
       }, {
         key: req.query.key,
-        value: JSON.parse(req.body)
+        value: JSON.parse(req.body),
+        endpoint: "/set"
       });
     } catch(e) {
       return reject(["INTERNAL_ERROR", e.toString()], {
-        key: req.query.key
+        key: req.query.key,
+        endpoint: "/set"
       });
     }
   } else {
@@ -64,12 +66,14 @@ module.exports = async (req, res) => {
       }, {
         key: req.query.key,
         token: req.query.token,
-        value: JSON.parse(req.body)
+        value: JSON.parse(req.body),
+        endpoint: "/set"
       });
     } catch(e) {
       return reject(["INTERNAL_ERROR", e.toString()], {
         token: req.query.token,
-        key: req.query.key
+        key: req.query.key,
+        endpoint: "/set"
       });
     }
   }
