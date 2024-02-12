@@ -12,7 +12,6 @@ const ERR_PARAM = [
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
-  res.setHeader("X-Data", typeof req.body);
   function resolve(data, reqdata) {
     res.status(200).send(JSON.stringify({
       success: true,
@@ -38,17 +37,18 @@ module.exports = async (req, res) => {
       key: req.query.key
     });
   }
+  var body = JSON.parse(JSON.stringify(req.body))
   if(req.query.token == undefined) {
     // new database
     try {
       var db = await pocketdb();
-      await db.set(req.query.key, JSON.parse(req.body));
+      await db.set(req.query.key, body);
       return resolve({
         list: db.list,
         token: db.token
       }, {
         key: req.query.key,
-        value: JSON.parse(req.body),
+        value: body,
         endpoint: "/set"
       });
     } catch(e) {
@@ -61,13 +61,13 @@ module.exports = async (req, res) => {
     // load database
     try {
       var db = await pocketdb(req.query.token);
-      await db.set(req.query.key, JSON.parse(req.body));
+      await db.set(req.query.key, body);
       return resolve({
         list: db.list,
       }, {
         key: req.query.key,
         token: req.query.token,
-        value: JSON.parse(req.body),
+        value: body,
         endpoint: "/set"
       });
     } catch(e) {
