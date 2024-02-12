@@ -6,7 +6,7 @@ const ERR_METHOD = [
 ];
 const ERR_PARAM = [
   "INCOMPLETE_PARAM",
-  "Incomplete parameters. Please view the documentation https://pocketdb-api.vercel.app/docs/set for more information.",
+  "Incomplete parameters. Please view the documentation https://github.com/creuserr/pocketdb-api/blob/main/README.md#documentation for more information.",
 ];
 
 module.exports = async (req, res) => {
