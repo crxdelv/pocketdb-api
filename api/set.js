@@ -45,7 +45,8 @@ module.exports = async (req, res) => {
     var body = JSON.parse(req.body)
   } catch(e) {
     return reject(ERR_BODY, {
-      token: req.query.token
+      token: req.query.token,
+      key: req.query.key
     });
   }
   if(req.query.token == undefined) {
