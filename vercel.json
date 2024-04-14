@@ -1,22 +1,40 @@
 {
-  "version": 2,
+    "version": 2,
   "cleanUrls": true,
   "builds": [{
-    "src": "/src/rss.js",
+    "src": "/api/*.js",
     "use": "@vercel/node"
   }],
   "headers": [{
-    "source": "/src/rss.js",
+    "source": "/api/set.js",
     "headers": [{
       "key": "Access-Control-Allow-Origin",
       "value": "*"
+    }, {
+      "key": "Access-Control-Allow-Methods",
+      "value": "POST"
+    }]
+  }, {
+    "source": "/api/get.js",
+    "headers": [{
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    }, {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET"
     }]
   }],
   "rewrites": [{
-    "source": "/post/blank",
-    "destination": "/src/blank.html"
+    "source": "/set",
+    "destination": "/api/set.js"
   }, {
-    "source": "/post/(.*)",
-    "destination": "/src/feed.html#$1"
+    "source": "/get",
+    "destination": "/api/get.js"
+  }, {
+    "source": "/docs/set",
+    "destination": "/docs/set.html"
+  }, {
+    "source": "/docs/get",
+    "destination": "/docs/get.html"
   }]
 }
