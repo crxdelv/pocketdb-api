@@ -10,8 +10,8 @@ const ERR_PARAM = [
 ];
 const ERR_BODY = [
   "INVALID_BODY",
-  "Body is not properly "
-]
+  "Body is not properly encoded. Please view the documentation https://github.com/creuserr/pocketdb-api/blob/main/README.md#documentation for more information."
+];
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -44,7 +44,9 @@ module.exports = async (req, res) => {
   try {
     var body = JSON.parse(req.body)
   } catch(e) {
-    
+    return reject(ERR_BODY, {
+      token: req.query.token
+    });
   }
   if(req.query.token == undefined) {
     // new database
