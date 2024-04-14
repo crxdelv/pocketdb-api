@@ -2,26 +2,14 @@
   "version": 2,
   "cleanUrls": true,
   "builds": [{
-    "src": "/api/*.js",
+    "src": "/src/rss.js",
     "use": "@vercel/node"
   }],
   "headers": [{
-    "source": "/api/set.js",
+    "source": "/src/rss.js",
     "headers": [{
       "key": "Access-Control-Allow-Origin",
       "value": "*"
-    }, {
-      "key": "Access-Control-Allow-Methods",
-      "value": "POST"
-    }]
-  }, {
-    "source": "/api/get.js",
-    "headers": [{
-      "key": "Access-Control-Allow-Origin",
-      "value": "*"
-    }, {
-      "key": "Access-Control-Allow-Methods",
-      "value": "GET"
     }]
   }],
   "rewrites": [{
