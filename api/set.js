@@ -9,7 +9,8 @@ const ERR_PARAM = [
   "Incomplete parameters. Please view the documentation https://github.com/creuserr/pocketdb-api/blob/main/README.md#documentation for more information.",
 ];
 const ERR_BODY = [
-  
+  "INVALID_BODY",
+  "Body is not properly "
 ]
 
 module.exports = async (req, res) => {
