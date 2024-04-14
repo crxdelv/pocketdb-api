@@ -17,6 +17,6 @@
     "destination": "/src/blank.html"
   }, {
     "source": "/post/(.*)",
-    "destination": "/src"
+    "destination": "/src/feed.html#$1"
   }]
 }
