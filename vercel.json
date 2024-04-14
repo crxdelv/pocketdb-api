@@ -13,16 +13,10 @@
     }]
   }],
   "rewrites": [{
-    "source": "/set",
-    "destination": "/api/set.js"
+    "source": "/post/blank",
+    "destination": "/src/blank.html"
   }, {
-    "source": "/get",
-    "destination": "/api/get.js"
-  }, {
-    "source": "/docs/set",
-    "destination": "/docs/set.html"
-  }, {
-    "source": "/docs/get",
-    "destination": "/docs/get.html"
+    "source": "/post/(.*)",
+    "destination": "/src"
   }]
 }
