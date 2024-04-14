@@ -8,6 +8,9 @@ const ERR_PARAM = [
   "INCOMPLETE_PARAM",
   "Incomplete parameters. Please view the documentation https://github.com/creuserr/pocketdb-api/blob/main/README.md#documentation for more information.",
 ];
+const ERR_BODY = [
+  
+]
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -37,7 +40,11 @@ module.exports = async (req, res) => {
       key: req.query.key
     });
   }
-  var body = JSON.parse(JSON.stringify(req.body))
+  try {
+    var body = JSON.parse(req.body)
+  } catch(e) {
+    
+  }
   if(req.query.token == undefined) {
     // new database
     try {
