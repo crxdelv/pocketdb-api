@@ -143,6 +143,7 @@ The output would look like this:
 | Endpoint | Error | Message | Cause |
 |:--------:|:-----:|:-------:|:-----:|
 | `/set` | `INCOMPLETE_PARAM` | Incomplete parameters. Please view the documentation https://github.com/creuserr/pocketdb-api/blob/main/README.md#documentation for more information. | The parameter `key` is required. As well as the body as JSON. |
+| `/set` | `INVALID_BODY` | Body is not properly encoded. Please view the documentation https://github.com/creuserr/pocketdb-api/blob/main/README.md#documentation for more information. | Body must be a valid stringified JSON. *String is expected* |
 | `/set` | `INVALID_METHOD` | POST is the only method accepted for the endpoint /set | The endpoint `/set` only accepts the `POST` method. |
 | `/get` | `INCOMPLETE_PARAM` | Incomplete parameters. Please view the documentation https://github.com/creuserr/pocketdb-api/blob/main/README.md#documentation for more information. | The parameters `key` and `token` are required. |
 | `/get` | `INVALID_METHOD` | GET is the only method accepted for the endpoint /get | The endpoint `/get` only accepts the `GET` method. |
