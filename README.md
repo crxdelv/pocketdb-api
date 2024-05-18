@@ -3,6 +3,11 @@
 >
 > *Stamped at April 26, 2024*
 
+> [!NOTE]
+> Database administration page is in progress.
+>
+> *Stamped at May 18, 2024*
+
 # pocketdb-api
 
 Handcrafted REST API for [pocketdb.js](https://gist.github.com/creuserr/a6b445c27ff248b3971c0a65bcd89a35) &mdash; pocket database wrapper for [telegra.ph](https://telegra.ph)
