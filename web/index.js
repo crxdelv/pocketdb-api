@@ -89,7 +89,7 @@ function getByteSize(raw) {
   const encoded = new TextEncoder().encode(raw);
   const bytes = encoded.length;
   const size = bytes / 1024;
-  if(size > 5) return "5+";
+  if(size > 1) return "1+";
   return size.toFixed(2);
 }
 
