@@ -8,7 +8,7 @@ var interval = 10000;
 async function login() {
   $("#login-input").removeClass("pdb-input-error");
   $("#login-label").hide();
-  const token = $("#login-input").val().trim();
+  const token = $("#login-input").val().trim().replaceAll(" ", "");
   if(/[^0-9a-f]/gi.test(token) || token.length == 0) {
     $("#login-input").addClass("pdb-input-error");
     $("#login-label-title").text("Invalid database token");
