@@ -206,6 +206,8 @@ async function commit(key) {
         $("#dashboard-label-title").text("Too much bytes to handle");
         $("#dashboard-input").addClass("pdb-input-error");
         $("#dashboard-label").show();
+        $("#dashboard-input, #dashboard-buttons > button").prop("disabled", false);
+      $("#dashboard-spinner").hide();
         return;
       } else if(!res.success) throw res;
       window.datablob[key] = {
