@@ -105,8 +105,7 @@ function getEllipsis(raw, size) {
 function getObjectSample(data) {
   if(data == null) return "null";
   if(Array.isArray(data)) {
-    let raw = data.length == 0 ? null : JSON.stringify(data.slice(0, 7).map(i => getEllipsis(i, 20)), null, 2);
-    if(raw != null) raw = raw.substr(1, raw.length - 2);
+    let raw = data.length == 0 ? null : data.slice(0, 7).map(i => `"${getEllipsis(i, 20)}"`).join(", ");
     return `[ ${raw || "Empty"} ]`;
   }
   const raw = Object.keys(data).slice(0, 7).map(i => getEllipsis(i, 20)).join(", ");
