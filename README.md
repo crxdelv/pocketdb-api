@@ -2,8 +2,6 @@
 
 Handcrafted REST API for [pocketdb.js](https://gist.github.com/creuserr/a6b445c27ff248b3971c0a65bcd89a35) &mdash; pocket database wrapper for [telegra.ph](https://telegra.ph)
 
-<p align="center"><a href="https://creuserr.github.io/pocketdb-api/web/index.html"><kbd>:large_blue_circle: Try it online</kbd></a></p>
-
 ```json5
 // GET https://pocketdb-api.vercel.app/get?token=my-token&key=users
 {
@@ -23,6 +21,11 @@ Handcrafted REST API for [pocketdb.js](https://gist.github.com/creuserr/a6b445c2
   }
 }
 ```
+
+# Try it Online
+`pocketdb-api` offers online usage at [/web/index.html](https://creuserr.github.io/pocketdb-api/web/index.html)
+
+![](demo.gif)
 
 # Endpoints
 | Endpoint | Method | Parameters |
